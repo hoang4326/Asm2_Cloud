@@ -12,7 +12,7 @@
 <body class="container">
     <h1 style="text-align: center; font-size: 40px;">Product Information</h1>
     <br>
-            <form method="POST" action="/search" class="example" style="">
+            <form method="POST" action="/search" class="example" >
                 <input type="text" name="txtName" placeholder="Search...">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -37,7 +37,11 @@
                 <td>{{price}}</td>
                 <td><img src="{{imgUrl}}" width="100px" height="100px"></td>
                 <td>{{quantity}}</td>
-                <td><a href="/delete?id={{_id}}" onclick="return confirm('Are you sure')">Delete</a></td>
+                <td>
+                    <a href="/edit?id={{_id}}">Edit</a>
+                    <br>
+                    <a href="/delete?id={{_id}}" onclick="return confirm('Are you sure')">Delete</a>
+                </td>
             </tr>
             {{/each}}
        </tbody>      
