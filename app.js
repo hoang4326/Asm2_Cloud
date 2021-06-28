@@ -5,7 +5,7 @@ app.set('view engine','hbs');
 
 
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb+srv://hoang4326:tamnhungoc88@cluster0.hroln.mongodb.net/test";
+const url = "mongodb+srv://hoang4326:tamnhungoc88@cluster0.qbbb2.mongodb.net/test";
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
