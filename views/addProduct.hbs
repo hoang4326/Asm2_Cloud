@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/homestyle.css">
+    <title>New Product</title>
+</head>
+<body class="differ">
+    <div class="container">
+    <form action="/add" method="post" >
+        <h1 style="font-size: 50px; margin-bottom: 50px;">Add New Product</h1>
+            <br>
+            <div class="add">
+                <label>ID:</label> 
+                <input type="text" name= "txtId" style="margin-left: 25px;">
+            </div>
+            <br>
+            <div class="add">
+                <label>Name:</label> 
+                <input type="text" name="txtName" >
+            </div>
+                <br>
+            <div class="add">
+                <label>Price:</label> 
+                <input type="text" name="txtPrice">
+            </div>
+                <br>
+            <div class="add">
+                <label>Image:</label> 
+                <input type="text" name="imgURL">              
+            </div>
+            <br>
+            <div class="add">
+                <label>Quantity:</label> 
+                <input type="text" name="txtQuantity" style="margin-right: 15px;">
+                
+            </div>
+            <input type="submit" value="Add" class="submit">
+
+            
+        </form>
+    </div>
+    
+</body>
+</html>
