@@ -24,24 +24,6 @@ app.post('/search', async (req,res)=>{
     res.render('showProduct',{model:results})
 })
 
-app.post('/update',async (req,res)=>{
-    const id = req.body.id;
-    const idInput = req.body.txtId;
-    const nameInput = req.body.txtName;
-    const priceInput = req.body.txtPrice;
-    const imgURLInput = req.body.imgURL;
-    const quantityInput = req.body.txtQuantity;
-    const newValues ={$set : {id: idInput,name:nameInput, price:priceInput,
-        imgUrl:imgURLInput, size : {dai:20, rong:40}, quantity: quantityInput}};
-    const ObjectID = require('mongodb').ObjectID;
-    const condition = {"_id" : ObjectID(id)};
-    
-    const client= await MongoClient.connect(url);
-    const dbo = client.db("VietHoangDB");
-    await dbo.collection("SanPham").updateOne(condition,newValues);
-    res.redirect('/view');
-})
-
 app.post('/add', async (req,res)=>{
     const idInput = req.body.txtId;
     const nameInput = req.body.txtName;
@@ -54,17 +36,6 @@ app.post('/add', async (req,res)=>{
     const dbo = client.db("VietHoangDB");
     await dbo.collection("SanPham").insertOne(newProduct);
     res.render('index')
-})
-
-app.get('/edit',async (req,res)=>{
-    const id = req.query.id;
-    var ObjectID = require('mongodb').ObjectID;
-    const condition = {"_id" : ObjectID(id)};
-
-    const client= await MongoClient.connect(url);
-    const dbo = client.db("VietHoangDB");
-    const productToEdit = await dbo.collection("SanPham").findOne(condition);
-    res.render('edit',{product:productToEdit})
 })
 
 app.get('/delete',async (req,res)=>{
